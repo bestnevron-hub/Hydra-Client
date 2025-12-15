@@ -1,173 +1,220 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;800&display=swap');
 
 /* --- Анимации и плавность --- */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(15px); }
+    from { opacity: 0; transform: translateY(25px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes neonPulse {
+    0% { box-shadow: 0 0 5px #bb86fc, 0 0 10px #bb86fc; }
+    50% { box-shadow: 0 0 15px #bb86fc, 0 0 25px #bb86fc; }
+    100% { box-shadow: 0 0 5px #bb86fc, 0 0 10px #bb86fc; }
+}
+
+@keyframes backgroundPan {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
 html {
-    scroll-behavior: smooth; /* Включаем плавную прокрутку */
+    scroll-behavior: smooth;
 }
 
 /* --- Общие стили --- */
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f8f9fa;
-    color: #212529;
-    line-height: 1.7;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0a0a0a, #1a0a2a, #0a0a1a);
+    background-size: 400% 400%;
+    animation: backgroundPan 20s ease infinite;
+    color: #e0e0e0;
+    line-height: 1.8;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 .container {
     width: 100%;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px;
     text-align: center;
-    animation: fadeIn 0.7s ease-out; /* Применяем анимацию */
+    animation: fadeIn 0.8s ease-out;
 }
 
 section {
-    padding: 60px 20px;
+    padding: 80px 20px;
     text-align: center;
 }
 
 h1, h2, h3 {
-    color: #212529;
-    font-weight: 800;
+    font-family: 'Orbitron', sans-serif;
+    color: #ffffff;
+    font-weight: 900;
+    text-shadow: 0 0 15px rgba(187, 134, 252, 0.4), 0 0 25px rgba(187, 134, 252, 0.2);
 }
 
 /* --- Навигационное меню --- */
 .navbar {
-    background-color: rgba(248, 249, 250, 0.85);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid #dee2e6;
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(187, 134, 252, 0.2);
     padding: 15px 30px;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
 
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .nav-logo {
-    color: #0d6efd;
+    font-family: 'Orbitron', sans-serif;
+    color: #bb86fc;
     text-decoration: none;
-    font-size: 1.8em;
-    font-weight: 800;
+    font-size: 2.2em;
+    font-weight: 900;
+    animation: neonPulse 2s ease-in-out infinite alternate;
+    transition: text-shadow 0.3s;
+}
+
+.nav-logo:hover {
+    text-shadow: 0 0 20px #bb86fc, 0 0 30px #bb86fc, 0 0 40px #bb86fc;
 }
 
 .nav-menu {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 30px;
     margin: 0;
     padding: 0;
 }
 
 .nav-link {
-    color: #495057;
+    color: #e0e0e0;
     text-decoration: none;
-    font-size: 1.1em;
-    padding: 8px 15px;
-    border-radius: 8px;
-    transition: background-color 0.3s, color 0.3s;
-    font-weight: 700;
+    font-size: 1.15em;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s;
+    font-weight: 600;
 }
 
 .nav-link:hover {
-    color: #0d6efd;
+    background-color: #bb86fc;
+    color: #121212;
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(187, 134, 252, 0.5);
 }
 
 .nav-link.active {
-    background-color: #0d6efd;
-    color: #fff;
+    background-color: #bb86fc;
+    color: #121212;
+    font-weight: 800;
+    box-shadow: 0 0 10px rgba(187, 134, 252, 0.4);
 }
 
 /* --- Секция Header --- */
 header {
-    padding: 100px 20px;
+    padding: 140px 20px 80px;
 }
 
 header h1 {
-    font-size: 5em;
-    margin-bottom: 10px;
+    font-size: 6.5em;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #bb86fc, #00ffff); /* Фиолетовый к бирюзовому */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    letter-spacing: -2px;
 }
 
 .tagline {
-    font-size: 1.5em;
-    color: #6c757d;
-    margin-bottom: 40px;
-    max-width: 600px;
+    font-size: 1.8em;
+    color: #a0a0a0;
+    margin-bottom: 60px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    font-weight: 300;
 }
 
 /* --- 3D Модель --- */
 model-viewer {
     width: 100%;
-    max-width: 500px;
-    height: 400px;
-    margin: 40px auto;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    background-color: #e9ecef; /* Светлый фон для модели */
+    max-width: 700px;
+    height: 500px;
+    margin: 60px auto;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(45deg, #1a0a2a, #0a0a1a);
+    border: 2px solid rgba(187, 134, 252, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+model-viewer:hover {
+    transform: scale(1.01);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
 }
 
 /* --- Кнопки --- */
 .my-button {
-    background-color: #0d6efd;
-    color: #fff;
-    font-weight: 700;
-    padding: 18px 40px;
-    font-size: 1.2em;
+    background: linear-gradient(45deg, #bb86fc, #00ffff);
+    color: #121212;
+    font-weight: 800;
+    padding: 22px 50px;
+    font-size: 1.4em;
     border: none;
-    border-radius: 12px;
+    border-radius: 15px;
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
-    transition: transform 0.2s, box-shadow 0.2s;
-    margin: 10px;
-    box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 15px;
+    box-shadow: 0 10px 30px rgba(187, 134, 252, 0.5);
 }
 
 .my-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(13, 110, 253, 0.4);
+    transform: translateY(-7px) scale(1.03);
+    box-shadow: 0 15px 45px rgba(187, 134, 252, 0.7);
 }
 
 .my-button.music-button {
-    background-color: #e9ecef;
-    color: #495057;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
     box-shadow: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .my-button.music-button:hover {
-    background-color: #dee2e6;
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.15);
 }
 
 /* --- Секции --- */
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 50px;
     text-align: left;
 }
 
 .feature-card {
-    background-color: #fff;
-    padding: 35px;
-    border-radius: 15px;
-    border: 1px solid #dee2e6;
-    transition: transform 0.3s, box-shadow 0.3s;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    padding: 45px;
+    border-radius: 20px;
+    border: 1px solid rgba(187, 134, 252, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    transition: transform 0.4s, box-shadow 0.4s;
     animation: fadeIn 0.7s ease-out forwards;
     opacity: 0;
 }
@@ -178,34 +225,37 @@ model-viewer {
 
 
 .feature-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
 }
 
 .feature-card h3 {
-    font-size: 1.6em;
-    margin-bottom: 15px;
-    color: #0d6efd;
+    font-size: 1.8em;
+    margin-bottom: 18px;
+    color: #00ffff; /* Бирюзовый акцент */
 }
 
 .cta-section {
-    background-color: #fff;
-    border-radius: 15px;
-    border: 1px solid #dee2e6;
-    padding: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    border: 1px solid rgba(187, 134, 252, 0.15);
+    padding: 80px 40px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
 }
 
 .price {
-    font-size: 3em;
-    font-weight: 800;
-    color: #212529;
-    margin-bottom: 20px;
+    font-size: 4em;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 30px;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
 }
 
 /* --- Footer --- */
 footer {
     text-align: center;
-    padding: 40px 20px;
-    font-size: 0.9em;
-    color: #6c757d;
+    padding: 60px 20px;
+    font-size: 1em;
+    color: #a0a0a0;
 }
