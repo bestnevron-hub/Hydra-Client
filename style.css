@@ -1,68 +1,68 @@
+/* --- Общие стили --- */
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     background-color: #121212;
     color: #e0e0e0;
     line-height: 1.6;
     margin: 0;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    padding: 0;
 }
 
 .container {
-    max-width: 800px;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    padding: 60px 20px;
     text-align: center;
-    background-color: #1e1e1e;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid #333;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+h1, h2, h3 {
+    color: #ffffff;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+/* --- Секция Header --- */
+header {
+    text-align: center;
+    padding: 80px 20px;
 }
 
 header h1 {
-    font-size: 3em;
-    color: #ffffff;
+    font-size: 4em;
     margin-bottom: 10px;
 }
 
 .tagline {
-    font-size: 1.2em;
-    color: #bb86fc; /* Акцентный цвет */
-    margin-bottom: 40px;
+    font-size: 1.3em;
+    color: #bb86fc;
+    margin-bottom: 30px;
 }
 
-main h2 {
-    font-size: 1.8em;
-    color: #ffffff;
-    border-bottom: 2px solid #bb86fc;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    display: inline-block;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 40px;
-    text-align: left;
-    display: inline-block;
-}
-
-ul li {
-    font-size: 1.1em;
-    margin-bottom: 15px;
-}
-
+/* --- Кнопки --- */
 .my-button {
     background-color: #bb86fc;
     color: #121212;
     font-weight: bold;
     padding: 15px 35px;
-    font-size: 1.2em;
+    font-size: 1.1em;
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
     transition: background-color 0.3s, transform 0.2s;
 }
 
@@ -71,8 +71,104 @@ ul li {
     transform: scale(1.05);
 }
 
+.my-button.secondary {
+    background-color: transparent;
+    border: 2px solid #bb86fc;
+    color: #bb86fc;
+}
+
+.my-button.secondary:hover {
+    background-color: #bb86fc;
+    color: #121212;
+}
+
+/* --- Секция Преимущества (Features) --- */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.feature-card {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.feature-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* --- Секция Тарифы (Pricing) --- */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background-color: #1e1e1e;
+    padding: 40px;
+    border-radius: 10px;
+    border: 2px solid #333;
+}
+
+.pricing-card.popular {
+    border-color: #bb86fc;
+    transform: scale(1.05);
+}
+
+.price {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #fff;
+    margin: 20px 0;
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.pricing-card li {
+    margin-bottom: 10px;
+}
+
+/* --- Секция Отзывы (Testimonials) --- */
+.testimonial-card {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+    border-left: 4px solid #bb86fc;
+    text-align: left;
+}
+
+.testimonial-card cite {
+    display: block;
+    margin-top: 15px;
+    font-style: normal;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* --- Секция Призыв к действию (CTA) --- */
+.cta-section {
+    background-color: #1e1e1e;
+    padding: 60px;
+    border-radius: 12px;
+}
+
+/* --- Footer --- */
 footer {
-    margin-top: 40px;
+    text-align: center;
+    padding: 40px 20px;
     font-size: 0.9em;
     color: #757575;
 }
