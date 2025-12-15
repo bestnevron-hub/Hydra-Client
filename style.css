@@ -71,17 +71,6 @@ header h1 {
     transform: scale(1.05);
 }
 
-.my-button.secondary {
-    background-color: transparent;
-    border: 2px solid #bb86fc;
-    color: #bb86fc;
-}
-
-.my-button.secondary:hover {
-    background-color: #bb86fc;
-    color: #121212;
-}
-
 /* --- Секция Преимущества (Features) --- */
 .features-grid {
     display: grid;
@@ -101,68 +90,18 @@ header h1 {
     margin-bottom: 10px;
 }
 
-/* --- Секция Тарифы (Pricing) --- */
-.pricing-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.pricing-card {
+/* --- Секция Покупка (CTA) --- */
+.cta-section {
     background-color: #1e1e1e;
-    padding: 40px;
-    border-radius: 10px;
-    border: 2px solid #333;
-}
-
-.pricing-card.popular {
-    border-color: #bb86fc;
-    transform: scale(1.05);
+    padding: 60px;
+    border-radius: 12px;
 }
 
 .price {
     font-size: 2.5em;
     font-weight: bold;
     color: #fff;
-    margin: 20px 0;
-}
-
-.pricing-card ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 30px;
-}
-
-.pricing-card li {
-    margin-bottom: 10px;
-}
-
-/* --- Секция Отзывы (Testimonials) --- */
-.testimonial-card {
-    background-color: #1e1e1e;
-    padding: 30px;
-    border-radius: 10px;
-    max-width: 600px;
-    margin: 0 auto 20px auto;
-    border-left: 4px solid #bb86fc;
-    text-align: left;
-}
-
-.testimonial-card cite {
-    display: block;
-    margin-top: 15px;
-    font-style: normal;
-    font-weight: bold;
-    color: #fff;
-}
-
-/* --- Секция Призыв к действию (CTA) --- */
-.cta-section {
-    background-color: #1e1e1e;
-    padding: 60px;
-    border-radius: 12px;
+    margin-bottom: 20px;
 }
 
 /* --- Footer --- */
