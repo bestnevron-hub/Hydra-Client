@@ -21,23 +21,22 @@
     </nav>
 
     <div class="container">
-        <header>
-            <h1>Hydra Client</h1>
-            <p class="tagline">Ваше ультимативное решение для максимальной производительности.</p>
-
-            <!-- 3D-модель -->
+        <!-- Новая секция с 3D-моделью в качестве фона -->
+        <header class="hero-section">
             <model-viewer
                 src="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb"
                 alt="3D модель Hydra Client"
                 auto-rotate
                 camera-controls
+                disable-zoom
                 shadow-intensity="1"
-                ar
-                ar-modes="webxr scene-viewer quick-look"
-                class="hydra-model"
+                class="hero-model"
             ></model-viewer>
-
-            <a href="purchase.html" class="my-button">Перейти к покупке</a>
+            <div class="hero-text">
+                <h1>Hydra Client</h1>
+                <p class="tagline">Ваше ультимативное решение для максимальной производительности.</p>
+                <a href="purchase.html" class="my-button">Перейти к покупке</a>
+            </div>
         </header>
 
         <footer>
